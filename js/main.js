@@ -41,27 +41,28 @@ const teamUsers = [ // creo l'array contenente dentro obj in cui inserisco come 
 ];
 
 console.log(teamUsers)
+for (let i = 0; i <= teamUsers.length -1; i++) { 
+createCard(teamUsers[i]);// callback della funzione con argomenti inseriti
+};
 
-createCard(0, teamUsers.length);// callback della funzione con argomenti inseriti
-console.log(createCard); // controllo della funzione 
-
-function createCard(startCard , endCard){ // creo la funzione per creare le card 
-    for (let i = startCard; i <= endCard; i++) { // utilizzo il medoto dell'innerHTML in quanto la card ha una struttura ben complessa, tanto è una card che viene ripetuta più volte. 
+function createCard(membro){ // creo la funzione per creare le card 
+    // utilizzo il medoto dell'innerHTML in quanto la card ha una struttura ben complessa, tanto è una card che viene ripetuta più volte. 
         areaStampCard.innerHTML += `<div class="team-card">
         <div class="card-image">
           <img
-            src="${teamUsers[i].img}"
-            alt="${teamUsers[i].alt}"
+            src="${membro.img}"
+            alt="${membro.alt}"
           />
         </div>
         <div class="card-text">
-          <h3>${teamUsers[i].name}</h3>
-          <p>${teamUsers[i].role}</p>
+          <h3>${membro.name}</h3>
+          <p>${membro.role}</p>
         </div>
-        </div>`;
-
-    };
+        </div>`; 
 }
+
+// BONUS 
+
 
 
 
