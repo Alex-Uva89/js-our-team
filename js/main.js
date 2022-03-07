@@ -1,4 +1,5 @@
 let areaStampCard = document.querySelector('.team-container');
+console.log(areaStampCard)
 
 const teamUsers = [ // creo l'array contenente dentro obj in cui inserisco come coppie i dati di ogni componente del team
     {
@@ -34,12 +35,14 @@ const teamUsers = [ // creo l'array contenente dentro obj in cui inserisco come 
     {
         name:'Barbara Ramos',
         role: 'Graphic Designer',
-        img: 'img/img/barbara-ramos-graphic-designer.jpg',
+        img: 'img/barbara-ramos-graphic-designer.jpg',
         alt: 'Barbara Ramos, Graphic Designer'
     },
 ];
 
-createCard(teamUsers, teamUsers.length);// callback della funzione con argomenti inseriti
+console.log(teamUsers)
+
+createCard(0, teamUsers.length);// callback della funzione con argomenti inseriti
 console.log(createCard); // controllo della funzione 
 
 function createCard(startCard , endCard){ // creo la funzione per creare le card 
