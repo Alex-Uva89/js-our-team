@@ -1,6 +1,6 @@
 let areaStampCard = document.querySelector('.team-container');
 
-const TeamUsers = [
+const teamUsers = [ // creo l'array contenente dentro obj in cui inserisco come coppie i dati di ogni componente del team
     {
         name:'Wayne Barnett',
         role: 'Founder & CEO',
@@ -39,25 +39,26 @@ const TeamUsers = [
     },
 ];
 
-createCard(TeamUsers, TeamUsers.length);
+createCard(teamUsers, teamUsers.length);// callback della funzione con argomenti inseriti
+console.log(createCard); // controllo della funzione 
 
-function createCard(startCard , endCard){ 
-    for (let i = startCard; i <= endCard; i++) {
+function createCard(startCard , endCard){ // creo la funzione per creare le card 
+    for (let i = startCard; i <= endCard; i++) { // utilizzo il medoto dell'innerHTML in quanto la card ha una struttura ben complessa, tanto è una card che viene ripetuta più volte. 
         areaStampCard.innerHTML += `<div class="team-card">
         <div class="card-image">
           <img
-            src="${TeamUsers[i].img}"
-            alt="${TeamUsers[i].alt}"
+            src="${teamUsers[i].img}"
+            alt="${teamUsers[i].alt}"
           />
         </div>
         <div class="card-text">
-          <h3>${TeamUsers[i].name}</h3>
-          <p>${TeamUsers[i].role}</p>
+          <h3>${teamUsers[i].name}</h3>
+          <p>${teamUsers[i].role}</p>
         </div>
         </div>`;
-        console.log(areaStampCard.innerHTML);
+
     };
 }
 
-console.log(createCard);
+
 
