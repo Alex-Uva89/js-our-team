@@ -69,13 +69,17 @@ const inputImg = document.getElementById('image');
 const btnAddMember = document.getElementById('addMemberButton');
 
 
+
 btnAddMember.addEventListener('click', function() { // creo evento click sul bottone add per aggiungere nuovi elementi alla pagina con il form
-    const newMembers = { //creo nuovo oggetto da aggiungere all'array (prendo esempio da oggetti già creati precedentemente)
+    const newMember = { //creo nuovo oggetto da aggiungere all'array (prendo esempio da oggetti già creati precedentemente)
         name: inputName.value, //nella coppia chiave:valore nel valore inserisco il value dell'input
         role: inputRole.value, //nella coppia chiave:valore nel valore inserisco il value dell'input
         img: inputImg.value, //nella coppia chiave:valore nel valore inserisco il value dell'input
         alt: inputName.value + ',' +inputRole.value //nella coppia chiave:valore nel valore inserisco il value dell'input che è formato dai valori precedenti
     }
-    teamUsers.push(newMembers) // inserisco il nuovo oggetto all'interno dell'array
+    teamUsers.push(newMember) // inserisco il nuovo oggetto all'interno dell'array
     createCard(teamUsers[teamUsers.length - 1]) // callback di funzione inserendo al posto del momebro l'ultimo elemento dell'array evidenziato con la lunghezza dello st4esso - 1(lenght)
+    inputName.value = '';
+    inputRole.value = '';
+    inputImg.value = '';
 })
