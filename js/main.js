@@ -54,7 +54,10 @@ function createCard(startCard , endCard){
           <h3>${TeamUsers[i].name}</h3>
           <p>${TeamUsers[i].role}</p>
         </div>
-        </div>`  
+        </div>`;
+        console.log(areaStampCard.innerHTML);
     };
 }
+
+console.log(createCard);
 
