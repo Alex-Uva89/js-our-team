@@ -41,7 +41,7 @@ const teamUsers = [ // creo l'array contenente dentro obj in cui inserisco come 
 ];
 
 console.log(teamUsers)
-for (let i = 0; i <= teamUsers.length -1; i++) { 
+for (let i = 0; i < teamUsers.length; i++) { // uso il minore senza l'uguale per non utilizzare il lenght - 1
 createCard(teamUsers[i]);// callback della funzione con argomenti inseriti
 };
 
