@@ -63,6 +63,19 @@ function createCard(membro){ // creo la funzione per creare le card
 
 // BONUS 
 
+const inputName = document.getElementById('name');
+const inputRole = document.getElementById('role');
+const inputImg = document.getElementById('image');
+const btnAddMember = document.getElementById('addMemberButton');
 
 
-
+btnAddMember.addEventListener('click', function() {
+    const newMembers = {
+        name: inputName.value,
+        role: inputRole.value,
+        img: inputImg.value,
+        alt: inputName.value + ',' +inputRole.value
+    }
+    teamUsers.push(newMembers)
+    createCard(teamUsers[teamUsers.length - 1])
+})
