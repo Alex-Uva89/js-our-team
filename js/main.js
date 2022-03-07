@@ -1,4 +1,4 @@
-const areaStampCard = document.querySelector('.team_container')
+let areaStampCard = document.querySelector('.team-container');
 
 const TeamUsers = [
     {
@@ -39,17 +39,22 @@ const TeamUsers = [
     },
 ];
 
-for (let i = TeamUsers; i < TeamUsers.length; i++) {
-    areaStampCard.innerHTML = `<div class="team-card">
-    <div class="card-image">
-      <img
-        src="${TeamUsers[i].img}"
-        alt="${TeamUsers[i].alt}"
-      />
-    </div>
-    <div class="card-text">
-      <h3>${TeamUsers[i].name}</h3>
-      <p>${TeamUsers[i].role}</p>
-    </div>
-  </div>`
+createCard(TeamUsers, TeamUsers.length);
+
+function createCard(startCard , endCard){ 
+    for (let i = startCard; i <= endCard; i++) {
+        areaStampCard.innerHTML += `<div class="team-card">
+        <div class="card-image">
+          <img
+            src="${TeamUsers[i].img}"
+            alt="${TeamUsers[i].alt}"
+          />
+        </div>
+        <div class="card-text">
+          <h3>${TeamUsers[i].name}</h3>
+          <p>${TeamUsers[i].role}</p>
+        </div>
+        </div>`  
+    };
 }
+
