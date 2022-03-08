@@ -68,7 +68,12 @@ const inputRole = document.getElementById('role');
 const inputImg = document.getElementById('image');
 const btnAddMember = document.getElementById('addMemberButton');
 
-
+function clearInput(){ // creo funzione per cancellare il value inserito
+    inputName.value = '';
+    inputRole.value = '';
+    inputImg.value = '';
+}
+   
 
 btnAddMember.addEventListener('click', function() { // creo evento click sul bottone add per aggiungere nuovi elementi alla pagina con il form
     const newMember = { //creo nuovo oggetto da aggiungere all'array (prendo esempio da oggetti già creati precedentemente)
@@ -79,7 +84,5 @@ btnAddMember.addEventListener('click', function() { // creo evento click sul bot
     }
     teamUsers.push(newMember) // inserisco il nuovo oggetto all'interno dell'array
     createCard(teamUsers[teamUsers.length - 1]) // callback di funzione inserendo al posto del momebro l'ultimo elemento dell'array evidenziato con la lunghezza dello st4esso - 1(lenght)
-    inputName.value = '';
-    inputRole.value = '';
-    inputImg.value = '';
+    clearInput()
 })
